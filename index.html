@@ -1,23 +1,86 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sticker Editor</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="container">
-        <h1>Sticker Editor</h1>
-        <div class="canvas-wrapper">
-            <canvas id="stickerCanvas" width="1080" height="1620"></canvas>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sticker Text Editor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Google+Sans+Text:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <div class="topbar">
+        <button id="langToggleBtn" class="lang-btn" type="button">CN</button>
+      </div>
+
+      <header class="app__header">
+        <h1 id="titleText">Sticker Text Editor</h1>
+      </header>
+
+      <section class="controls" aria-label="Text controls">
+        <label class="field">
+          <span id="textLabel">Text</span>
+          <textarea id="textInput" rows="3">安安酱卡哇伊</textarea>
+        </label>
+
+        <div class="grid">
+          <label class="field">
+            <span id="xLabel">Text X</span>
+            <div class="stepper">
+              <button id="xMinusBtn" type="button" class="step-btn">-15</button>
+              <input id="xInput" type="number" value="540" step="15" />
+              <button id="xPlusBtn" type="button" class="step-btn">+15</button>
+            </div>
+          </label>
+
+          <label class="field">
+            <span id="yLabel">Text Y</span>
+            <div class="stepper">
+              <button id="yMinusBtn" type="button" class="step-btn">-15</button>
+              <input id="yInput" type="number" value="850" step="15" />
+              <button id="yPlusBtn" type="button" class="step-btn">+15</button>
+            </div>
+          </label>
+
+          <label class="field">
+            <span id="fontSizeLabel">Font size</span>
+            <input id="fontSizeInput" type="range" min="24" max="180" step="1" value="64" />
+            <small><output id="fontSizeValue">64</output> px</small>
+          </label>
+
+          <label class="field">
+            <span id="textColorLabel">Text color</span>
+            <input id="colorInput" type="color" value="#ffffff" />
+          </label>
+
+          <label class="field">
+            <span id="outlineColorLabel">Outline color</span>
+            <input id="strokeColorInput" type="color" value="#111111" />
+          </label>
+
+          <label class="field">
+            <span id="outlineWidthLabel">Outline width</span>
+            <input id="strokeWidthInput" type="range" min="0" max="18" step="1" value="6" />
+            <small><output id="strokeWidthValue">6</output> px</small>
+          </label>
         </div>
-        <div class="controls">
-            <label for="textInput">Enter text:</label>
-            <input type="text" id="textInput" placeholder="Type something...">
-            <button id="downloadBtn">Download Image</button>
+
+        <div class="actions">
+          <button id="downloadBtn" type="button">Download PNG</button>
         </div>
-    </div>
+      </section>
+
+      <section class="preview-card" aria-label="Preview">
+        <canvas id="canvas" role="img" aria-label="Sticker preview"></canvas>
+      </section>
+    </main>
+
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
+
