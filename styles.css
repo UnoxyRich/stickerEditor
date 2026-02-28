@@ -1,4 +1,5 @@
 :root {
+  color-scheme: light dark;
   --bg: #f3f7f4;
   --bg-strong: #dde8df;
   --card: #fffffc;
@@ -8,6 +9,63 @@
   --accent-press: #0a754c;
   --shadow: 0 16px 40px rgba(29, 43, 33, 0.12);
   --radius: 18px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1a14;
+    --bg-strong: #13261c;
+    --card: #1b2b22;
+    --ink: #ebf4ee;
+    --ink-soft: #a8beae;
+    --accent: #3fb27f;
+    --accent-press: #2f9a6b;
+    --shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+  }
+
+  body {
+    background:
+      radial-gradient(circle at 18% 16%, rgba(255, 255, 255, 0.07) 0%, transparent 40%),
+      radial-gradient(circle at 84% 12%, rgba(63, 178, 127, 0.25) 0%, transparent 40%),
+      linear-gradient(140deg, var(--bg) 0%, var(--bg-strong) 100%);
+  }
+
+  .controls,
+  .preview-card {
+    border-color: rgba(235, 244, 238, 0.12);
+  }
+
+  input[type="text"],
+  input[type="number"],
+  textarea {
+    background: #142019;
+    color: var(--ink);
+    border-color: rgba(235, 244, 238, 0.2);
+  }
+
+  .topbar .lang-btn {
+    background: #1d2f25;
+    border-color: rgba(235, 244, 238, 0.26);
+    color: var(--ink);
+  }
+
+  .topbar .lang-btn:hover {
+    background: #22352a;
+  }
+
+  .step-btn {
+    background: #244233;
+    color: #d8f2e4;
+    border-color: #3d6351;
+  }
+
+  .step-btn:hover {
+    background: #2d4e3d;
+  }
+
+  canvas {
+    border-color: rgba(235, 244, 238, 0.2);
+  }
 }
 
 * {
@@ -114,6 +172,33 @@ textarea {
 input[type="range"],
 input[type="color"] {
   width: 100%;
+}
+
+input[type="color"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid rgba(45, 38, 29, 0.2);
+  background: transparent;
+  padding: 4px;
+  cursor: pointer;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch,
+input[type="color"]::-moz-color-swatch {
+  border: 0;
+  border-radius: 8px;
+}
+
+@media (prefers-color-scheme: dark) {
+  input[type="color"] {
+    border-color: rgba(235, 244, 238, 0.2);
+  }
 }
 
 input:focus,
