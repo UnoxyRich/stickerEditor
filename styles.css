@@ -38,9 +38,18 @@
   input[type="text"],
   input[type="number"],
   textarea {
-    background: #142019;
+    background: #0d1712;
     color: var(--ink);
+    -webkit-text-fill-color: var(--ink);
+    caret-color: var(--ink);
     border-color: rgba(235, 244, 238, 0.2);
+    color-scheme: dark;
+  }
+
+  input[type="text"]::placeholder,
+  input[type="number"]::placeholder,
+  textarea::placeholder {
+    color: rgba(235, 244, 238, 0.62);
   }
 
   .topbar .lang-btn {
