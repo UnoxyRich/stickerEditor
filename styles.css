@@ -403,13 +403,55 @@ canvas {
 @media (max-width: 920px) {
   .app {
     grid-template-columns: 1fr;
+    padding: 14px;
+    gap: 14px;
+  }
+
+  body {
+    background:
+      radial-gradient(circle at 14% 8%, #ffffff 0%, transparent 36%),
+      radial-gradient(circle at 82% 10%, #cfe9da 0%, transparent 38%),
+      linear-gradient(160deg, #f0f6f2 0%, #d4e6da 100%);
   }
 
   .controls {
     order: 2;
+    background: #ffffff;
+    border-color: rgba(22, 54, 38, 0.14);
   }
 
   .preview-card {
     order: 1;
+    background: #f9fffb;
+    border-color: rgba(22, 54, 38, 0.16);
+  }
+
+  .topbar .lang-btn {
+    background: #f5fcf8;
+    border-color: rgba(22, 54, 38, 0.24);
+  }
+}
+
+@media (max-width: 920px) and (prefers-color-scheme: dark) {
+  body {
+    background:
+      radial-gradient(circle at 14% 8%, rgba(255, 255, 255, 0.06) 0%, transparent 36%),
+      radial-gradient(circle at 82% 10%, rgba(63, 178, 127, 0.2) 0%, transparent 38%),
+      linear-gradient(160deg, #0c1712 0%, #16291f 100%);
+  }
+
+  .controls {
+    background: #172820;
+    border-color: rgba(235, 244, 238, 0.18);
+  }
+
+  .preview-card {
+    background: #1a2d24;
+    border-color: rgba(235, 244, 238, 0.2);
+  }
+
+  .topbar .lang-btn {
+    background: #20352a;
+    border-color: rgba(235, 244, 238, 0.3);
   }
 }
