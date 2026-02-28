@@ -1,79 +1,79 @@
 :root {
   color-scheme: light dark;
-  --bg: #f3f7f4;
-  --bg-strong: #dde8df;
+  --bg: #eff5ff;
+  --bg-strong: #dce9ff;
   --card: #fffffc;
-  --ink: #1d2b21;
-  --ink-soft: #54665a;
-  --accent: #0c8a5a;
-  --accent-press: #0a754c;
-  --shadow: 0 16px 40px rgba(29, 43, 33, 0.12);
+  --ink: #1a2d4a;
+  --ink-soft: #4f6485;
+  --accent: #2563eb;
+  --accent-press: #1d4ed8;
+  --shadow: 0 16px 40px rgba(26, 45, 74, 0.12);
   --radius: 18px;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #0f1a14;
-    --bg-strong: #13261c;
-    --card: #1b2b22;
-    --ink: #ebf4ee;
-    --ink-soft: #a8beae;
-    --accent: #3fb27f;
-    --accent-press: #2f9a6b;
+    --bg: #081225;
+    --bg-strong: #0f2240;
+    --card: #172a4a;
+    --ink: #edf4ff;
+    --ink-soft: #b2c6e6;
+    --accent: #60a5fa;
+    --accent-press: #3b82f6;
     --shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
   }
 
   body {
     background:
       radial-gradient(circle at 18% 16%, rgba(255, 255, 255, 0.07) 0%, transparent 40%),
-      radial-gradient(circle at 84% 12%, rgba(63, 178, 127, 0.25) 0%, transparent 40%),
+      radial-gradient(circle at 84% 12%, rgba(96, 165, 250, 0.28) 0%, transparent 40%),
       linear-gradient(140deg, var(--bg) 0%, var(--bg-strong) 100%);
   }
 
   .controls,
   .preview-card {
-    border-color: rgba(235, 244, 238, 0.12);
+    border-color: rgba(237, 244, 255, 0.16);
   }
 
   input[type="text"],
   input[type="number"],
   textarea {
-    background: #0d1712;
+    background: #0d1b34;
     color: var(--ink);
     -webkit-text-fill-color: var(--ink);
     caret-color: var(--ink);
-    border-color: rgba(235, 244, 238, 0.2);
+    border-color: rgba(173, 201, 241, 0.65);
     color-scheme: dark;
   }
 
   input[type="text"]::placeholder,
   input[type="number"]::placeholder,
   textarea::placeholder {
-    color: rgba(235, 244, 238, 0.62);
+    color: rgba(205, 223, 250, 0.78);
   }
 
   .topbar .lang-btn {
-    background: #1d2f25;
-    border-color: rgba(235, 244, 238, 0.26);
+    background: #21395f;
+    border-color: rgba(195, 217, 249, 0.4);
     color: var(--ink);
   }
 
   .topbar .lang-btn:hover {
-    background: #22352a;
+    background: #294670;
   }
 
   .step-btn {
-    background: #244233;
-    color: #d8f2e4;
-    border-color: #3d6351;
+    background: #284572;
+    color: #e5f0ff;
+    border-color: #4f74ac;
   }
 
   .step-btn:hover {
-    background: #2d4e3d;
+    background: #33578d;
   }
 
   canvas {
-    border-color: rgba(235, 244, 238, 0.2);
+    border-color: rgba(237, 244, 255, 0.2);
   }
 }
 
@@ -95,7 +95,7 @@ body {
   color: var(--ink);
   background:
     radial-gradient(circle at 18% 16%, #ffffff 0%, transparent 40%),
-    radial-gradient(circle at 84% 12%, #d9efe1 0%, transparent 40%),
+    radial-gradient(circle at 84% 12%, #dbe9ff 0%, transparent 40%),
     linear-gradient(140deg, var(--bg) 0%, var(--bg-strong) 100%);
 }
 
@@ -213,8 +213,8 @@ input[type="color"]::-moz-color-swatch {
 input:focus,
 textarea:focus {
   outline: none;
-  border-color: #28a572;
-  box-shadow: 0 0 0 3px rgba(12, 138, 90, 0.15);
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.22);
 }
 
 .grid {
@@ -272,18 +272,18 @@ button:active {
 }
 
 .topbar .lang-btn:hover {
-  background: #f0f6f2;
+  background: #edf4ff;
 }
 
 .step-btn {
-  background: #e8f4ec;
-  color: #175b3f;
-  border: 1px solid #c6dfd0;
+  background: #e3eeff;
+  color: #1d4f9f;
+  border: 1px solid #bfd4f8;
   font-weight: 700;
 }
 
 .step-btn:hover {
-  background: #d9eee3;
+  background: #d2e3ff;
 }
 
 input[type="range"] {
@@ -291,8 +291,8 @@ input[type="range"] {
   appearance: none;
   height: 12px;
   border-radius: 999px;
-  background: linear-gradient(90deg, #b8e6cf 0%, #dff4e9 100%);
-  border: 1px solid #c7e8d6;
+  background: linear-gradient(90deg, #bed9ff 0%, #e2eeff 100%);
+  border: 1px solid #c6daf8;
 }
 
 input[type="range"]::-webkit-slider-thumb {
@@ -302,8 +302,8 @@ input[type="range"]::-webkit-slider-thumb {
   height: 24px;
   border-radius: 50%;
   border: 2px solid #ffffff;
-  background: linear-gradient(180deg, #20a76f, #0f8759);
-  box-shadow: 0 5px 14px rgba(15, 135, 89, 0.35);
+  background: linear-gradient(180deg, #3b82f6, #1d4ed8);
+  box-shadow: 0 5px 14px rgba(29, 78, 216, 0.35);
 }
 
 input[type="range"]::-moz-range-thumb {
@@ -311,8 +311,8 @@ input[type="range"]::-moz-range-thumb {
   height: 24px;
   border-radius: 50%;
   border: 2px solid #ffffff;
-  background: linear-gradient(180deg, #20a76f, #0f8759);
-  box-shadow: 0 5px 14px rgba(15, 135, 89, 0.35);
+  background: linear-gradient(180deg, #3b82f6, #1d4ed8);
+  box-shadow: 0 5px 14px rgba(29, 78, 216, 0.35);
 }
 
 input[type="range"]:hover {
@@ -410,25 +410,25 @@ canvas {
   body {
     background:
       radial-gradient(circle at 14% 8%, #ffffff 0%, transparent 36%),
-      radial-gradient(circle at 82% 10%, #cfe9da 0%, transparent 38%),
-      linear-gradient(160deg, #f0f6f2 0%, #d4e6da 100%);
+      radial-gradient(circle at 82% 10%, #d6e7ff 0%, transparent 38%),
+      linear-gradient(160deg, #f1f6ff 0%, #d9e7ff 100%);
   }
 
   .controls {
     order: 2;
     background: #ffffff;
-    border-color: rgba(22, 54, 38, 0.14);
+    border-color: rgba(24, 58, 103, 0.14);
   }
 
   .preview-card {
     order: 1;
-    background: #f9fffb;
-    border-color: rgba(22, 54, 38, 0.16);
+    background: #f8fbff;
+    border-color: rgba(24, 58, 103, 0.16);
   }
 
   .topbar .lang-btn {
-    background: #f5fcf8;
-    border-color: rgba(22, 54, 38, 0.24);
+    background: #f2f7ff;
+    border-color: rgba(24, 58, 103, 0.24);
   }
 }
 
@@ -436,22 +436,22 @@ canvas {
   body {
     background:
       radial-gradient(circle at 14% 8%, rgba(255, 255, 255, 0.06) 0%, transparent 36%),
-      radial-gradient(circle at 82% 10%, rgba(63, 178, 127, 0.2) 0%, transparent 38%),
-      linear-gradient(160deg, #0c1712 0%, #16291f 100%);
+      radial-gradient(circle at 82% 10%, rgba(96, 165, 250, 0.24) 0%, transparent 38%),
+      linear-gradient(160deg, #081121 0%, #102342 100%);
   }
 
   .controls {
-    background: #172820;
-    border-color: rgba(235, 244, 238, 0.18);
+    background: #152b4d;
+    border-color: rgba(237, 244, 255, 0.2);
   }
 
   .preview-card {
-    background: #1a2d24;
-    border-color: rgba(235, 244, 238, 0.2);
+    background: #173156;
+    border-color: rgba(237, 244, 255, 0.22);
   }
 
   .topbar .lang-btn {
-    background: #20352a;
-    border-color: rgba(235, 244, 238, 0.3);
+    background: #203b63;
+    border-color: rgba(190, 214, 248, 0.4);
   }
 }
