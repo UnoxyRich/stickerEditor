@@ -26,6 +26,7 @@ const strokeWidthValue = document.getElementById("strokeWidthValue");
 const downloadBtn = document.getElementById("downloadBtn");
 
 const COORD_STEP = 15;
+const themeMedia = window.matchMedia("(prefers-color-scheme: dark)");
 
 const i18n = {
   en: {
@@ -120,18 +121,50 @@ function stepCoordinate(input, delta) {
   draw();
 }
 
+function getThemeColorMeta() {
+  let meta = document.querySelector('meta[name="theme-color"]');
+  if (!meta) {
+    meta = document.createElement("meta");
+    meta.setAttribute("name", "theme-color");
+    document.head.append(meta);
+  }
+  return meta;
+}
+
+function applySystemTheme() {
+  const isDark = themeMedia.matches;
+  const theme = isDark ? "dark" : "light";
+  document.documentElement.dataset.theme = theme;
+  document.documentElement.style.colorScheme = theme;
+  getThemeColorMeta().setAttribute("content", isDark ? "#0f1a14" : "#eef5f1");
+}
+
+function bindThemeWatcher() {
+  if (typeof themeMedia.addEventListener === "function") {
+    themeMedia.addEventListener("change", applySystemTheme);
+    return;
+  }
+
+  if (typeof themeMedia.addListener === "function") {
+    themeMedia.addListener(applySystemTheme);
+  }
+}
+
 image.onload = () => {
   canvas.width = image.naturalWidth;
   canvas.height = image.naturalHeight;
   draw();
 };
 
+function handleControlUpdate() {
+  fontSizeValue.textContent = fontSizeInput.value;
+  strokeWidthValue.textContent = strokeWidthInput.value;
+  draw();
+}
+
 [textInput, xInput, yInput, fontSizeInput, colorInput, strokeColorInput, strokeWidthInput].forEach((el) => {
-  el.addEventListener("input", () => {
-    fontSizeValue.textContent = fontSizeInput.value;
-    strokeWidthValue.textContent = strokeWidthInput.value;
-    draw();
-  });
+  el.addEventListener("input", handleControlUpdate);
+  el.addEventListener("change", handleControlUpdate);
 });
 
 downloadBtn.addEventListener("click", () => {
@@ -151,6 +184,8 @@ langToggleBtn.addEventListener("click", () => {
   applyLanguage();
 });
 
+applySystemTheme();
+bindThemeWatcher();
 applyLanguage();
 fontSizeValue.textContent = fontSizeInput.value;
 strokeWidthValue.textContent = strokeWidthInput.value;
